@@ -11,9 +11,10 @@ L
 src/main/java/demo/Demo.java,7\3\73ec338def4b7ac4580fe74317763c9160b9be1f
 P
  src/main/java/demo/NewClass.java,7\5\7539d5323660fd79feef51f30a3caa60057d902f
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+O
+src/main/java/demo/Message.java,c\a\ca2833b6fad8e2a541aad91de15bfe5c74dd3ad2
 T
-$src/main/java/hometask/ToString.java,4\c\4c4faa2dc803f243decca94931e6c359915fd309
-Q
-!src/main/java/hometask/Point.java,3\8\38563dacf8d3be1c637f37e3338b94885fe03aad
-U
-%src/main/java/hometask/ToStrings.java,7\8\78fb093bccc4c01e167ab7a995c264b90a5697d8
+$src/main/java/demo/MessageValue.java,2\e\2ec4866c65684e858a9e86339c4b0600118a99b3

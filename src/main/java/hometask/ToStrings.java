@@ -2,8 +2,7 @@ package hometask;
 
 public class ToStrings {
 
-    public static String toString(Object obj) {
-        Point point = new Point();
+    public String converter(Object obj) {
         if (obj == null) {
             return "null";
         }
@@ -13,10 +12,14 @@ public class ToStrings {
             return obj.toString();
         }
         StringBuilder result = new StringBuilder();
+        result.append(aClass.getName());
+        result.append("[");
         if (annotation.includeName()) {
-            result.append(aClass.getName());
+
         }
-        result.append(" [x = " + point.x + ", y = " + point.y + "]");
-        return result.toString();
+        return result.toString().substring(9);
+
+
+
     }
 }

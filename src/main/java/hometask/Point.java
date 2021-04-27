@@ -1,8 +1,7 @@
 package hometask;
 
-import hometask.ToString;
+import lombok.Data;
 
-@ToString(includeName = true)
 public class Point {
     @ToString(includeName = true)
     int x;
@@ -10,8 +9,8 @@ public class Point {
     int y;
 
     public static void main(String[] args) {
-        Point point = new Point();
-        System.out.println(point.x);
+
+
     }
 }
 //Point[5, 10]
