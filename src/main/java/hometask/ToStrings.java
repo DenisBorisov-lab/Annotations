@@ -1,23 +1,43 @@
 package hometask;
 
+import lombok.SneakyThrows;
+
+import java.lang.reflect.Field;
+
 public class ToStrings {
 
-    public static String toString(Object obj){
-        if (obj == null){
+    public static String converter(Object object) {
+        if (object == null) {
             return "null";
         }
-        Class<?> aClass = obj.getClass();
+        Class<?> aClass = object.getClass();
         ToString annotation = aClass.getAnnotation(ToString.class);
         if (annotation == null) {
-            return obj.toString();
+            return object.toString();
         }
         StringBuilder result = new StringBuilder();
-        if(annotation.includeName()){
-            result.append(aClass.getName());
+
+        if (annotation.includeName()) {
+            result.append(object.getClass().getName());
         }
         result.append("[");
-        //getDeclaredFields
-        //f.getAnnotation()
-        return null;
+        for (Field declaredField : aClass.getDeclaredFields()) {
+            annotation = declaredField.getAnnotation(ToString.class);
+            if (annotation != null && annotation.includeName()) {
+
+                try {
+                    result.append(declaredField.getName()).append(" = ").append(declaredField.get(object)).append(", ");
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+        if (!result.substring(result.length() - 1, result.length()).equals("[")){
+            result = new StringBuilder(result.substring(0, result.length() - 2));
+        }
+        result.append("]");
+
+        return result.toString();
     }
 }

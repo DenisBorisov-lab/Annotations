@@ -1,6 +1,9 @@
 package hometask;
 
-import hometask.ToString;
+
+import lombok.SneakyThrows;
+
+import java.lang.reflect.Field;
 
 @ToString(includeName = true)
 public class Point {
@@ -9,9 +12,10 @@ public class Point {
     @ToString(includeName = true)
     int y;
 
+    @SneakyThrows
     public static void main(String[] args) {
         Point point = new Point();
-        System.out.println(point.x);
+        System.out.println(ToStrings.converter(point));
     }
 }
 //Point[5, 10]
